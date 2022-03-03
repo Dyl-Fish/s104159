@@ -4,10 +4,49 @@
 function toggle(x) {
   x.classList.toggle("change");
 }
+var acc = document.getElementsByClassName("foldyboi");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
 </script>
   <style>
     body {
       background-color: white; 
+    }
+    .active:after {
+  content: "\2212";
+}
+    .hidemelol {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+    .foldyboi {
+    background-color: #eee;
+   color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    }
+    .foldyboi a:hover {
+    background-color: gray;
     }
     .searchbar {
       overflow:hidden;
@@ -70,4 +109,10 @@ function toggle(x) {
      <a href="#"><i class="dn"></i></a>
      <a href="#"><i class="dn"></i></a>
     </div>
+    <button class="foldyboi">Important Information</button>
+<div class="hidemelol">
+  <p>joe mama.</p>
+</div>
+</body>
+</html>
 
