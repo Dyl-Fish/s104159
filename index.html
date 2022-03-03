@@ -46,6 +46,7 @@
 }
   </style>
   <style id="weird bar thing">
+  body {margin:0}
    .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
@@ -61,6 +62,37 @@
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
+}
+</style>
+<style id="BlockLmao">
+.SquareLmao {
+  width: 80px;
+  height: 80px;
+  background-color: #555; 
+  padding:deez;
+}
+
+.SquareLmao a {
+  width: 32x;
+  display: block;
+  text-align: center;
+  padding:0;
+  transition: all 0.3s ease;
+  color: white; 
+  font-size: 32px;
+  background-color: gray;
+}
+
+.SquareLmao a:hover {
+  background-color: #404040;
+  padding:0;
+}
+
+.active {
+  background-color: #04AA6D;
+  width: 90px;
+  height: 90px;
+  padding:0;
 }
 </style>
   <body>
@@ -79,10 +111,14 @@
   <p>JoeMama</p>
   </center>
 </div>
+<div>
+<div class="SquareLmao">
+  <a style=padding:"0px" class="active" href="/lmaohi"></a>
+  </div>
+</div>
 <script>
 var acc = document.getElementsByClassName("foldyboi");
 var i;
-
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
