@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<script>
+function toggle(x) {
+  x.classList.toggle("change");
+}
+</script>
   <style>
     body {
       background-color: white; 
@@ -20,8 +25,33 @@
       overflow:hidden;
       background-color: #202020;
     }
+    .bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
   </style>
   <body>
+  <div>
+  <div id=BARSTHATAREFIRE class=container onclick="toggle(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  </div>
     <div class="searchbar">
      <a href="#"><i class="dn"></i></a>
      <a href="#"><i class="dn"></i></a>
