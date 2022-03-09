@@ -1,8 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
+<head>
 <style>
-  .I1 { background-attachment: fixed; }
+body {font-family: Arial;}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.tab button {
+  background-color: inherit;
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.suggest {
+  border:none;
+  background-color:gray;
+  color:white;
+  width:300px;
+  height:100px;
+  font-family:cambria;
+  font-size:50px;
+  border-radius:5px;  }
+  .suggest:onclick {
+  filter: blur(8px);
+  }
+  .notes {
+  width:600px;
+  height:900px;
 </style>
+</head>
 <body>
-  <canvas>:)</canvas>
-  <h6>This is text</h6>
+<div class="tab">
+<center>
+  <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
+  <button class="tablinks" onclick="openCity(event, 'Suggest')">Suggest</button>
+  </center>
+</div>
+
+<div id="Home" class="tabcontent">
+<center>
+  <h1> Hey! </h1>
+  <p>Welcome to the website! If you have any suggestions please go to the suggestions tab located at the top of the page!</p>
+  </center>
+</div>
+
+<div id="Notes" class="tabcontent">
+<center>
+  <form> <input type="text" class="notes"> </form>
+  </center>
+</div>
+
+<div id="Suggest" class="tabcontent">
+<center>
+  <button class="suggest" >Suggest</button>
+  </center>
+</div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 </body>
